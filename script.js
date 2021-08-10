@@ -1,6 +1,9 @@
 const form = document.querySelector("#setCodeForm");
 
 form.addEventListener("submit", (event) => {
+    const section = document.querySelector("#newBooster")
+    section.innerHTML = '';
+    arr = [];
 	event.preventDefault();
 	const formData = new FormData(form);
 	const code = formData.get("setCode");
