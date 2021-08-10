@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>Booster Simulator</title>
+		<link rel="stylesheet" href="/sort-testing/style.css" />
+		<script src="/sort-testing/script.js" defer></script>
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+	</head>
+	<body>
+		<main>
+			<section>
+				<h1>Booster Simulator</h1>
+
+				<p>
+					Enter a
+					<a
+						href="https://mtg.fandom.com/wiki/Set#List_of_Magic_expansions_and_sets"
+						target="_blank"
+						>3-character set code</a
+					>
+					to get a booster pack from that set!
+				</p>
+
+				<form id="setCodeForm">
+					<label for="setCode">Set code</label>
+					<input
+						type="text"
+						id="setCode"
+						name="setCode"
+						maxlength="3"
+						required
+					/>
+					<button type="submit" id="setCodeSubmit">Submit</button>
+				</form>
+			</section>
+
+			<section>
+				<form id="sortForm">
+					<label for="sort">Sort by</label>
+					<select name="sort" id="sort">
+						<option value="name">name (a-z)</option>
+						<option value="price">price (high-low)</option>
+						<option value="rarity">rarity (mythic-common)</option>
+					</select>
+					<button type="submit" id="sortSubmit">Submit</button>
+				</form>
+				<article>
+					<img
+						src="https://c1.scryfall.com/file/scryfall-cards/normal/front/6/d/6da045f8-6278-4c84-9d39-025adf0789c1.jpg"
+						alt='An image of the Magic: The Gathering card "Burgeoning".'
+					/>
+					<div>
+						<h2>Card Text</h2>
+
+						<p>Burgeoning G1</p>
+
+						<p>Enchantment</p>
+
+						<p>
+							Whenever an opponent plays a land, you may put a land card from
+							your hand onto the battlefield.
+						</p>
+
+						<p><i>"The first vine shows the others where to grow."</i></p>
+
+						<h2>Card Price</h2>
+
+						<p>$24.66</p>
+					</div>
+				</article>
+				<template>
+					<img src="" alt="" />
+
+					<div>
+						<h2></h2>
+
+						<p></p>
+
+						<p></p>
+
+						<p></p>
+						<p><i></i></p>
+
+						<h2></h2>
+
+						<p></p>
+					</div>
+				</template>
+				<section>
+					<h2>Booster</h2>
+					<div id="newBooster"></div>
+				</section>
+
+				<template id="template">
+					<img src="" alt="" />
+
+					<div>
+						<h2>Card Text</h2>
+
+						<p id="card_name"></p>
+
+						<p id="card_type"></p>
+
+						<p id="card_oracle"></p>
+						<p id="card_flavor"><i></i></p>
+
+						<h2>Card Price</h2>
+
+						<p id="card_price"></p>
+					</div>
+				</template>
+			</section>
+		</main>
+		<footer>
+			<p>
+				Made by
+				<a href="https://github.com/MJOW1999" target="_blank">MJOW1999</a> &
+				<a href="https://github.com/lopezelpesado" target="_blank"
+					>lopezelpesado</a
+				>
+				using the
+				<a href="https://docs.magicthegathering.io/" target="_blank"
+					>Magic: The Gathering API</a
+				>
+				and the
+				<a href="https://scryfall.com/docs/api" target="_blank">Scryfall API</a
+				>.
+			</p>
+			<p>
+				See the
+				<a href="https://github.com/fac22/michaelAlexAPI" target="_blank"
+					>code for this website.</a
+				>
+			</p>
+		</footer>
+	</body>
+</html>
