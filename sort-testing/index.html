@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>Booster Simulator</title>
+		<link rel="stylesheet" href="/sort-testing/style.css" />
+		<script src="/sort-testing/script.js" defer></script>
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+	</head>
+	<body>
+		<main>
+			<section>
+				<h1>Booster Simulator</h1>
+
+				<p>
+					Enter a
+					<a
+						href="https://mtg.fandom.com/wiki/Set#List_of_Magic_expansions_and_sets"
+						target="_blank"
+						>3-character set code</a
+					>
+					to get a booster pack from that set!
+				</p>
+
+				<form id="setCodeForm">
+					<label for="setCode">Set code</label>
+					<input
+						type="text"
+						id="setCode"
+						name="setCode"
+						maxlength="3"
+						required
+					/>
+					<button type="submit" id="setCodeSubmit">Submit</button>
+				</form>
+			</section>
+
+			<section id="sort-test">
+				<form id="sortForm">
+					<label for="sort">Sort by</label>
+					<select name="sort" id="sort">
+						<option value="nameAZ">name (a-z)</option>
+						<option value="priceHiLo">price (high-low)</option>
+						<option value="rarityMC">rarity (mythic-common)</option>
+					</select>
+					<button type="submit" id="sortSubmit">Submit</button>
+				</form>
+
+				<article class="card" data-name="d" data-price="3" data-rarity="4">
+					<p>name d price 3 rarity M</p>
+				</article>
+
+				<article class="card" data-name="b" data-price="1" data-rarity="3">
+					<p>name b price 1 rarity R</p>
+				</article>
+
+				<article class="card" data-name="c" data-price="2" data-rarity="1">
+					<p>name c price 2 rarity C</p>
+				</article>
+
+				<article class="card" data-name="a" data-price="4" data-rarity="2">
+					<p>name a price 4 rarity U</p>
+				</article>
+			</section>
+		</main>
+		<footer>
+			<p>
+				Made by
+				<a href="https://github.com/MJOW1999" target="_blank">MJOW1999</a> &
+				<a href="https://github.com/lopezelpesado" target="_blank"
+					>lopezelpesado</a
+				>
+				using the
+				<a href="https://docs.magicthegathering.io/" target="_blank"
+					>Magic: The Gathering API</a
+				>
+				and the
+				<a href="https://scryfall.com/docs/api" target="_blank">Scryfall API</a
+				>.
+			</p>
+			<p>
+				See the
+				<a href="https://github.com/fac22/michaelAlexAPI" target="_blank"
+					>code for this website.</a
+				>
+			</p>
+		</footer>
+	</body>
+</html>
