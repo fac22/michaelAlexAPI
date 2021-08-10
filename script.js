@@ -18,61 +18,31 @@ form.addEventListener("submit", (event) => {
 
 let arr = [];
 
-const CardsID = (card) => {
+async function CardsID(card) {
+    let items = [];
     console.log(card.length)
-    card.forEach(e => {
-        fetch(`https://api.scryfall.com/cards/multiverse/${e.multiverseid}`)
-        .then(response => response.json())
-        // .then((deck) => console.log(deck))
-        .then((card) => {
-            //output[card] = card.name.bold();
-            console.log(card)
-            // const image = document.createElement("img");
-            // image.src = `${card.image_uris.normal}`;
-            // image.alt = "";
-            // let source = `${card.image_uris.normal}`;
+    for(let i = 0; i < card.length; i++){
+        let scry = await fetch(`https://api.scryfall.com/cards/multiverse/${card[i].multiverseid}`)
+        let response = await scry.json();
+        items.push(response);
+    }
+    for(let i = 0; i < items.length; i++){
+        let image = `${items[i].image_uris.normal}`;
+        let name = items[i].name;
+        let type = items[i].type_line;
+        let rarity = items[i].rarity;
+        let oracle = items[i].oracle_text;
+        let flavor = items[i].flavor_text;
+        if(flavor === undefined){
+            flavor = "";
+        }
+        let price = `$${items[i].prices.usd}`;
 
-            // const name = document.createElement("h2");
-            // name.innerHTML = card.name.bold();
-
-            // const type = document.createElement("h3");
-            // type.innerHTML = card.type_line.bold();
-
-            // const rarity = document.createElement("h4");
-            // rarity.innerHTML = card.rarity.bold();
-            // console.log(card.rarity)
-
-            // const oracle = document.createElement("p");
-            // oracle.textContent = card.oracle_text;
-
-            // const flavor = document.createElement("p");
-            // flavor.innerHTML = card.flavor_text.italics();
-
-            // const price = document.createElement("p");
-            // price.textContent = `$${card.prices.usd}`;
-            let image = `${card.image_uris.normal}`
-            let name = card.name;
-            let type = card.type_line;
-            let rarity = card.rarity;
-            let oracle = card.oracle_text;
-            let flavor = card.flavor_text;
-            if(flavor === undefined){
-                flavor = "";
-            }
-            let price = `$${card.prices.usd}`;
-            
-            // booster.append(image, name, type, rarity, oracle, flavor, price);
-            arr.push({image, name, type, rarity, oracle, flavor, price});
-            
-        })
-        .catch((console.error));
-        
-        
-    })
+        arr.push({image, name, type, rarity, oracle, flavor, price})
+    }
+    console.log(arr)
     arr.forEach(createCardUsingTemplate);
 }
-console.log(arr);
-
 
 const booster = document.querySelector("#newBooster");
 
