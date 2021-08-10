@@ -36,81 +36,32 @@
 				</form>
 			</section>
 
-			<section>
+			<section id="sort-test">
 				<form id="sortForm">
 					<label for="sort">Sort by</label>
 					<select name="sort" id="sort">
-						<option value="name">name (a-z)</option>
-						<option value="price">price (high-low)</option>
-						<option value="rarity">rarity (mythic-common)</option>
+						<option value="nameAZ">name (a-z)</option>
+						<option value="priceHiLo">price (high-low)</option>
+						<option value="rarityMC">rarity (mythic-common)</option>
 					</select>
 					<button type="submit" id="sortSubmit">Submit</button>
 				</form>
-				<article>
-					<img
-						src="https://c1.scryfall.com/file/scryfall-cards/normal/front/6/d/6da045f8-6278-4c84-9d39-025adf0789c1.jpg"
-						alt='An image of the Magic: The Gathering card "Burgeoning".'
-					/>
-					<div>
-						<h2>Card Text</h2>
 
-						<p>Burgeoning G1</p>
-
-						<p>Enchantment</p>
-
-						<p>
-							Whenever an opponent plays a land, you may put a land card from
-							your hand onto the battlefield.
-						</p>
-
-						<p><i>"The first vine shows the others where to grow."</i></p>
-
-						<h2>Card Price</h2>
-
-						<p>$24.66</p>
-					</div>
+				<article class="card" data-name="d" data-price="3" data-rarity="4">
+					<p>name d price 3 rarity M</p>
 				</article>
-				<template>
-					<img src="" alt="" />
 
-					<div>
-						<h2></h2>
+				<article class="card" data-name="b" data-price="1" data-rarity="3">
+					<p>name b price 1 rarity R</p>
+				</article>
 
-						<p></p>
+				<article class="card" data-name="c" data-price="2" data-rarity="1">
+					<p>name c price 2 rarity C</p>
+				</article>
 
-						<p></p>
-
-						<p></p>
-						<p><i></i></p>
-
-						<h2></h2>
-
-						<p></p>
-					</div>
-				</template>
-				<section>
-					<h2>Booster</h2>
-					<div id="newBooster"></div>
-				</section>
-
-				<template id="template">
-					<img src="" alt="" />
-
-					<div>
-						<h2>Card Text</h2>
-
-						<p id="card_name"></p>
-
-						<p id="card_type"></p>
-
-						<p id="card_oracle"></p>
-						<p id="card_flavor"><i></i></p>
-
-						<h2>Card Price</h2>
-
-						<p id="card_price"></p>
-					</div>
-				</template>
+				<article class="card" data-name="a" data-price="4" data-rarity="2">
+					<p>name a price 4 rarity U</p>
+				</article>
 			</section>
 		</main>
 		<footer>
